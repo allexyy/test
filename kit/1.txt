@@ -3,3 +3,4 @@ FROM users
 LEFT JOIN phone_numbers
 ON users.id=phone_numbers.user_id
 WHERE `gender`=2 AND `birth_date` >= 1998-01-01 AND `birth_date` < 2003.01.01  
+//Измнеил формат даты в бд на date
