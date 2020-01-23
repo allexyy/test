@@ -2,4 +2,4 @@ SELECT users.name, phone_numbers.phone
 FROM users
 LEFT JOIN phone_numbers
 ON users.id=phone_numbers.user_id
-WHERE `gender`=2 AND `birth_date` >= 1009843200 AND `birth_date` >= 883612800 
+WHERE `gender`=2 AND `birth_date` >= 1998-01-01 AND `birth_date` < 2003.01.01  
