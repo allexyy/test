@@ -7,9 +7,9 @@
 </head>
 <body>
     <form action="../model/addModel.php" method="post">
-    <input type="text" name ='username' placeholder="Name"><br>
-    <input type="email" name="email" id="" placeholder="Email"><br>
-    <textarea name="text" id="" cols="30" rows="10" placeholder="You note"></textarea>
+    <input type="text" name ='username' placeholder="Name" required><br>
+    <input type="email" name="email" id="" placeholder="Email" required><br>
+    <textarea name="text" id="" cols="30" rows="10" placeholder="You note" required></textarea>
     <button type="submit">Submit</button>
     </form>
     

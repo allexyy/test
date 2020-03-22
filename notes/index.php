@@ -1,25 +1,23 @@
 <?php
-require_once('../config/db.php');
-
-
-
+require_once('config/db.php');
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="UTF-8"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     <title>Notelist</title>
 </head>
 <body>
     <header>
-        <li><a href="addpage.php" class = "btn btn-lg btn-primary btn-block text-uppercase">Add new Note</a></li>
+        <li><a href="view/loginpage.php" class = "btn btn-lg btn-primary btn-block text-uppercase">LOG IN</a></li>
+        <li><a href="view/addpage.php" class = "btn btn-lg btn-primary btn-block text-uppercase">Add Note</a></li>
     </header>
-            <table class="table_sort table">
+    <div calass = "table">
+            <table class="table">
             <thead>
             <tr>
                 <th scope="col">#</th>
@@ -30,7 +28,7 @@ require_once('../config/db.php');
             <tr>
             </thead>
             <tbody>
-                <?php
+            <?php
                 if(isset($_GET['pageno'])){
                     $pageno = $_GET['pageno'];
                 }
@@ -53,13 +51,13 @@ require_once('../config/db.php');
                         <th scope="row">'.$i++.'</th>
                         <td>'.$row['username'].'</td>
                         <td>'.$row['email'].'</td>
-                        <td> <a href=notepage.php?&id='.$row['id'].'>'.$row['text'].'</a></td>
+                        <td>'.$row['text'].'</a></td>
                         <td>'.$row['status'].'</td>
                       </tr>'
                     );
                     }
                 ?>
-            
+            </div>
             <ul class="pagination">
         <li><a href="?pageno=1">First</a></li>
         <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
@@ -70,7 +68,7 @@ require_once('../config/db.php');
         </li>
         <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
     </ul>
-    <script src="script.js"></script>
-            
+    <script src="view/script.js"></script>
+
 </body>
 </html>

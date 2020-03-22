@@ -11,11 +11,15 @@ $res = mysqli_fetch_array($note);
     <title>Заметка под номером <?=$res['id']?></title>
 </head>
 <body>
-<?='Id='.$res['id']?><br>
-<?='Username='.$res['username']?><br>
-<?='Email  ='.$res['email']?><br>
+
 
 <form action="../model/updateModel.php" method="post">
+<label for="id">Id:</label><br>
+<input type="text" name="id" value="<?=$res['id']?>"><br>
+<label for="username">Username:</label><br>
+<input type="text" name='username' value="<?=$res['username']?>"><br>
+<label for="email">Email:</label><br>
+<input type="email" name="email" value="<?=$res['email']?>"><br>
 <label for="contactChoice1">Ready</label>
 <input type="radio" name="status" value='1' id="contactChoice1">
 <label for="contactChoice1">Not Ready</label>

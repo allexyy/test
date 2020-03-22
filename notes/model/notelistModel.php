@@ -1,5 +1,5 @@
 <?php
-require_once '../db.php';
+require_once '../config/db.php';
 
 $login =$_POST['login'];
 $pass= $_POST['pass'];
@@ -12,6 +12,9 @@ while($data = mysqli_fetch_array($users)){
         $_SESSION['login']=$login;
         $_SESSION['pass']=$pass;
         header('Location:../view/adminpage.php');
+    }
+    else{
+        header('Location:../view/loginpage.php');   
     }
 }
 
